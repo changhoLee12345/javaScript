@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Calendar.html</title>
+    <style>
+        p {
+            font-size: large;
+        }
+    </style>
 </head>
+
 <body>
-<h1>깃 잘됩니다.</h1>
-<h2>ok</h2>
+    <h1>깃 잘됩니다.</h1>
+    <button type="button" onclick="createCal()">달력</button>
+    <p id="show"></p>
+    <script>
+        function createCal() {
+
+            var year = 2020;
+            var month = 2;
+
+            var show = document.getElementById("show");
+            var days = ["Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"];
+            var today = new Date(year, (month - 1), 1);
+            console.log(today.getFullYear(), today.getMonth(), today.getDate(), today.getDay())
+            var fullDay = getMonthDays(year, month);
+
+            var $table, $tr, $td, $text;
+            $table = document.createElement("table");
+            $table.setAttribute("border", 1);
+            $tr = document.createElement("tr");
+            for (i in days) {
+                $text = document.createTextNode(days[i]);
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+            }
+            $table.appendChild($tr);
+            var d = 1;
+            $tr = document.createElement("tr");
+            // console.log("fullDay: " + fullDay + ", " + today.getDay())
+            for (var i = 0; i < (fullDay + today.getDay()); i++) {
+                if (i < today.getDay()) {
+                    $text = document.createTextNode("");
+                } else {
+                    $text = document.createTextNode(d++);
+                }
+                if (i % 7 == 1) {
+                    $td.setAttribute("class", "sun");
+                }
+                if (i % 7 == 6) {
+                    $td.setAttribute("class", "sat");
+                }
+                $td = document.createElement("td");
+                $td.appendChild($text);
+                $tr.appendChild($td);
+                if (i % 7 == 6) {
+                    $table.appendChild($tr);
+                    $tr = document.createElement("tr");
+                }
+            }
+            $table.appendChild($tr);
+            show.appendChild($table);
+        }
+        function getMonthDays(year, month) {
+            switch (month) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12: {
+                    return 31;
+                }
+                case 4: case 6: case 9: case 11: {
+                    return 30;
+                }
+                case 2: {
+                    if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+                        return 29;
+                    } else { return 28; }
+                }
+            }
+        }// end of getMonthDays
+    </script>
 </body>
+
 </html>

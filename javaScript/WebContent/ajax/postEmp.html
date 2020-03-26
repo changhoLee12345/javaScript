@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<script>
+		var xhtp = new XMLHttpRequest();
+		xhtp.open("post", "../InsertEmpServlet", true);
+		// xhtp.setRequestHeader('Content-type', 'application/json');
+		xhtp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		xhtp.onreadystatechange = function () {
+			if (xhtp.readyState == 4 && xhtp.status == 200) {
+				console.log(xhtp.responseText);
+			}
+		}
+		// xhtp.send(JSON.stringify({"firstname":"Scott","lastname":"Tiger"}));
+		xhtp.send("firstname=John&lastname=Smith");
+	</script>
+</body>
+
+</html>

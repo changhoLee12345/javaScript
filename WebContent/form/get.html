@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>get.html</title>
+</head>
+
+<body>
+	<div style="font-size: large; background-color:teal">여기는 div입니다.</div>
+	<h2>get 방식 </h2>
+	<div style="background-color: violet; top:50px; position: relative; left: 100px; width: 50%;">
+		<form action="getData.jsp" method="get">
+			<table border="1">
+				<tr>
+					<td>이름</td>
+					<td><input type="text" name="myName" value="하준원"></td>
+				</tr>
+				<tr>
+					<td>전공</td>
+					<td><input type="text" name="myMajor" value="자바"></td>
+				</tr>
+				<tr>
+					<td>날짜</td>
+					<td><input type="date" name="today"></td>
+				</tr>
+				<tr>
+					<td>비번</td>
+					<td><input type="password" name="passwd"></td>
+				</tr>
+				<tr>
+					<td align="center" colspan="2">
+						<input type="submit" value="전송">
+						<input type="reset" value="취소">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>

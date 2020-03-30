@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td class="name">Scott</td>
+            <td class="age">16</td>
+        </tr>
+        <tr>
+            <td class="name">Junwon</td>
+            <td class="age">26</td>
+        </tr>
+        <tr>
+            <td class="name">Seongwoo</td>
+            <td class="age">36</td>
+        </tr>
+    </table>
+    <script>
+        var names = document.querySelectorAll(".name");
+        var ages = document.querySelectorAll(".age");
+        var persons = document.querySelectorAll("tr");
+        console.log(persons);
+        persons.forEach(function(k) {
+            console.log(k.children[1].innerText);
+        })
+        // console.log(ages);
+        names.forEach(function(obj) {
+            // console.log(obj);
+        });
+        var sum = 0;
+        ages.forEach(function(a, b, c) {
+            // console.log(a);
+            sum += parseInt(a.innerHTML);
+        })
+        // console.log("sum: " + sum);
+    </script>
+</body>
+
+</html>

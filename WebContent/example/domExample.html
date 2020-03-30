@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>domExample.html</title>
+</head>
+
+<body>
+    <button id="add">Add Row</button>
+    <ul id="parentList">
+        <!-- <li style="display:none">One</li> -->
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+    <script>
+        var lis = document.querySelectorAll("ul li");
+        // console.log(lis);
+        lis.forEach(function (a, b, c) {
+            console.log(a);
+            a.addEventListener("mouseover", function () {
+                a.style.backgroundColor = "yellow";
+            })
+            a.addEventListener("mouseout", function () {
+                a.style.backgroundColor = "";
+            })
+            a.addEventListener("click", function () {
+                var inputs = document.querySelectorAll("#parentList input");
+                inputs.forEach(function (obj) {
+                    obj.parentNode.remove(); // li > input
+                })
+                lis.forEach(function(objs) {
+                    if (objs.style.display == "none")
+                        objs.style.display = "";
+                })
+                var text = a.innerHTML;
+                $li = document.createElement("li");
+                $input = document.createElement("input");
+                $input.value = text;
+                $li.appendChild($input);
+                a.after($li);
+                a.style.display = "none";
+            })
+        });
+
+        var numbers = ["Three", "Four", "Five"];
+        var btn = document.getElementById('add');
+        // console.log(btn);
+        // btn.innerHTML = "한줄 추가";
+        var numberIdx = 0;
+        btn.addEventListener("click", function (e) {
+            console.log(e);
+            var $li = document.createElement("li");
+            $li.addEventListener("mouseover", function (a) {
+                // console.log(a);
+                a.target.style.backgroundColor = "yellow";
+            })
+            $li.addEventListener("mouseout", function (a) {
+                // console.log(a);
+                a.target.style.backgroundColor = "";
+            })
+            var $text = document.createTextNode(numbers[numberIdx]);
+            numberIdx++;
+            $li.appendChild($text);
+            document.getElementById('parentList').appendChild($li);
+        })
+    </script>
+</body>
+
+</html>

@@ -9,7 +9,33 @@
 </head>
 
 <body>
+    console.log(window);
+    <p id="show"></p>
+    <button onclick="clearInterval(auto1)">Stop</button>
+    <button onclick="goPage('www.naver.com')">click</button>
     <script>
+        function goPage(newPage) {
+            location.href = 'https://' + newPage;
+        }
+        window.onresize = function() {
+            console.log(window.innerWidth, window.innerHeight);
+        }
+        setTimeout(function() {
+            alert("Hi");
+        }, 300000);
+        var auto1 = setInterval(function() {
+            var now = new Date();
+            document.getElementById('show').innerHTML = now;
+        }, 2000);
+        // clearInterval(auto1);
+        // var result = window.confirm("확인하겠습니가?");
+        // if(result) {
+        //     console.log("확인버튼을 눌렀습니다.")
+        // }else{
+        //     console.log("취소버튼을 눌렀습니다.")
+        // }
+
+        // window.open("http://www.easyspub.com", "easyspub");
         var p1 = new CheckWeight("Hong", 170, 60);
         // console.log(p1.myName, p1.myHeight, p1.myWeight);
         var p2 = {
@@ -23,9 +49,6 @@
 
         var $today = new Date();
         console.log(window);
-
-
-
     </script>
 </body>
 

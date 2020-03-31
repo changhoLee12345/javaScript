@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object.html</title>
+    <script src="function3.js"></script>
+</head>
+
+<body>
+    <script>
+        var p1 = new CheckWeight("Hong", 170, 60);
+        // console.log(p1.myName, p1.myHeight, p1.myWeight);
+        var p2 = {
+            myName: "Hwang",
+            myHeight: 180,
+            myWeight: 88,
+            getInfo: function () {
+                return "이름: " + this.myName + ", 키는: " + this.myHeight;
+            }
+        }
+
+        var $today = new Date();
+        console.log(window);
+
+
+
+    </script>
+</body>
+
+</html>

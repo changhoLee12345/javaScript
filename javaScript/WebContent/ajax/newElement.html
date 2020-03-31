@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>name</td>
+            <td>phone</td>
+            <td>AddRow</td>
+        </tr>
+        <tr>
+            <td>Hong</td>
+            <td>1234</td>
+            <td><button>Change</button></td>
+        <tr>
+            <td>Hwang</td>
+            <td>1234</td>
+            <td><button>Change</button></td>
+        <tr>
+            <td>Park</td>
+            <td>1234</td>
+            <td><button>Change</button></td>
+        </tr>
+    </table>
+    <script>
+        var btns = document.querySelectorAll("td button");
+        console.log(btns)
+        btns.forEach(function (o, b) {
+            o.onclick = function () {
+                changeMode(o);
+            }
+        })
+        function changeMode(obj) {
+            var parentElement = obj.parentNode.parentNode;
+            console.log(parentElement);
+            var vName = obj.parentNode.parentNode.childNodes[1].innerHTML;
+            var phone = obj.parentNode.parentNode.childNodes[3].innerHTML;
+            // console.log(obj.parentNode.parentNode.childNodes[3].innerHTML)
+            $tr = document.createElement("tr");
+            $td = document.createElement("td");
+            $text = document.createTextNode("new1");
+            $td.appendChild($text);
+            $tr.appendChild($td);
+            parentElement.appendChild($tr);
+            obj.parentNode.parentNode.style.display = "none";
+
+        }
+    </script>
+</body>
+
+</html>

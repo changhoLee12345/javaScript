@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function1.html</title>
+    <script>
+        var num = 1;
+        // 변수값이 null, 0 => 거짓(false);
+        // 변수값이 있거나, "값" => 참(true);
+        function gallery(direct) {
+            if (direct) { //증가
+                if (num == 4)
+                    return;
+                num++;
+            } else { //감소
+                if (num == 1)
+                    return;
+                num--;
+            }
+            var photo = document.getElementById('photo');
+            photo.setAttribute("src", "../images/images" + num + ".jpg");
+        }
+    </script>
+</head>
+
+<body>
+    <div id="galleryZone">
+        <p><img id="photo" width="200px" height="100px" 
+            src="../images/images1.jpg"></p>
+        <p><button onclick="gallery(0)">이전</button></p>
+        <p><button onclick="gallery(1)">다음</button></p>
+    </div>
+
+    <script>
+        var fnc = "function";
+        console.log("첫번째: " + func1());
+        function func1() { // 함수명: func1
+            return 10 + 20;
+        }
+        var fnc1 = function (num1, num2) {
+            var num3 = 0;
+            return num1 + num3;
+        }
+        console.log("두번째: " + fnc1(10, 20));
+        function func3() {
+            // console.log(arguments);[]
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+            console.log("after return");
+        }
+        var sum = func3(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        console.log("합계: " + sum);
+
+    </script>
+</body>
+
+</html>

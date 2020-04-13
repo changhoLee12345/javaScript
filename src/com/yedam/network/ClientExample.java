@@ -3,7 +3,6 @@ package com.yedam.network;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
@@ -47,7 +46,7 @@ public class ClientExample extends Application {
 			}
 		};
 		thread.start();
-	}
+	} // end of startClient()
 
 	// stopClient()
 	void stopClient() {
@@ -68,8 +67,8 @@ public class ClientExample extends Application {
 	// receive()
 	void receive() {
 		while (true) {
-			byte[] buf = new byte[100];
 			try {
+				byte[] buf = new byte[100];
 				InputStream is = socket.getInputStream();
 				int readByte = is.read(buf);
 				if (readByte == -1) {
@@ -139,17 +138,16 @@ public class ClientExample extends Application {
 		btnConn.setPrefSize(60, 30);
 		btnConn.setOnAction(event -> {
 			if (btnConn.getText().equals("start")) {
-				// startClient();
+				startClient();
 			} else if (btnConn.getText().equals("stop")) {
-				// stopClient();
+				stopClient();
 			}
 		});
 
 		btnSend = new Button("send");
 		btnSend.setPrefSize(60, 30);
 		btnSend.setDisable(true);
-		btnSend.setOnAction(event -> System.out.println()// "메세지 보내는 기능"
-		);
+		btnSend.setOnAction(event -> send(txtInput.getText()));
 		bottom.setCenter(txtInput);
 		bottom.setLeft(btnConn);
 		bottom.setRight(btnSend);

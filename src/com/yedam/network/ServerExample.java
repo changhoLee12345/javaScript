@@ -45,11 +45,11 @@ public class ServerExample extends Application {
 				while (true) {
 					try {
 						Socket socket = serverSocket.accept();
-						String message = "[연결 수락:] " + socket.getRemoteSocketAddress() + " : "
-								+ Thread.currentThread().getName() + "]";
+						String message = "[연결 수락:] " + socket.getRemoteSocketAddress() + " : " + Thread.currentThread().getName() + "]";
 						Platform.runLater(() -> displayText(message));
 						Client client = new Client(socket);
 						list.add(client);
+						Platform.runLater(() -> displayText(message));
 					} catch (IOException e) {
 						if (!serverSocket.isClosed()) {
 							stopServer();
@@ -108,8 +108,7 @@ public class ServerExample extends Application {
 								throw new IOException();
 							}
 							String data = new String(buf, 0, readByte, "UTF-8");
-							String message = "[요청처리: " + data + socket.getRemoteSocketAddress() + " : "
-									+ Thread.currentThread().getName() + "]";
+							String message = "[요청처리: " + socket.getRemoteSocketAddress() + " : " + Thread.currentThread().getName() + "]" + data;
 							Platform.runLater(() -> {
 								displayText(message);
 							});
@@ -119,8 +118,7 @@ public class ServerExample extends Application {
 						} // end of while
 					} catch (IOException e) {
 						list.remove(Client.this);
-						String message = "[클라이언트 통신 안됨: " + socket.getRemoteSocketAddress() + " : "
-								+ Thread.currentThread().getName() + "]";
+						String message = "[클라이언트 통신 안됨: " + socket.getRemoteSocketAddress() + " : " + Thread.currentThread().getName() + "]";
 						Platform.runLater(() -> {
 							displayText(message);
 						});
@@ -140,10 +138,9 @@ public class ServerExample extends Application {
 				@Override
 				public void run() {
 					try {
-						byte[] buf = new byte[100];
-						OutputStream os;
-						os = socket.getOutputStream();
-						buf = data.getBytes("UTF-8");
+						byte[] buf = data.getBytes("UTF-8");
+						OutputStream os = socket.getOutputStream();
+						System.out.println("send: " + buf);
 						os.write(buf);
 						os.flush();
 					} catch (IOException e) {

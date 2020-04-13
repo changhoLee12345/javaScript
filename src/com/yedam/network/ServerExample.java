@@ -30,7 +30,7 @@ public class ServerExample extends Application {
 		executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
 		try {
 			serverSocket = new ServerSocket();
-			serverSocket.bind(new InetSocketAddress("192.168.0.69", 5001));
+			serverSocket.bind(new InetSocketAddress("192.168.0.16", 5001));
 		} catch (IOException e) {
 			if (!serverSocket.isClosed())
 				stopServer(); // serverSocket -> close()
@@ -108,7 +108,7 @@ public class ServerExample extends Application {
 								throw new IOException();
 							}
 							String data = new String(buf, 0, readByte, "UTF-8");
-							String message = "[요청처리: "+data + socket.getRemoteSocketAddress() + " : "
+							String message = "[요청처리: " + data + socket.getRemoteSocketAddress() + " : "
 									+ Thread.currentThread().getName() + "]";
 							Platform.runLater(() -> {
 								displayText(message);

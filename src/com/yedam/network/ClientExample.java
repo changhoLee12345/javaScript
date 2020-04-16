@@ -43,7 +43,8 @@ public class ClientExample extends Application {
 						stopClient();
 					}
 				}
-			}
+				receive();
+			} // end of run()
 		};
 		thread.start();
 	} // end of startClient()
@@ -92,10 +93,12 @@ public class ClientExample extends Application {
 	// send()
 	void send(String data) {
 		Thread thread = new Thread() {
+			String userData = "[창호] " + data;
+
 			@Override
 			public void run() {
 				try {
-					byte[] buf = data.getBytes("UTF-8");
+					byte[] buf = userData.getBytes("UTF-8");
 					OutputStream os = socket.getOutputStream();
 					os.write(buf);
 					os.flush();
@@ -147,7 +150,10 @@ public class ClientExample extends Application {
 		btnSend = new Button("send");
 		btnSend.setPrefSize(60, 30);
 		btnSend.setDisable(true);
-		btnSend.setOnAction(event -> send(txtInput.getText()));
+		btnSend.setOnAction(event -> {
+			send(txtInput.getText());
+			txtInput.setText("");
+		});
 		bottom.setCenter(txtInput);
 		bottom.setLeft(btnConn);
 		bottom.setRight(btnSend);

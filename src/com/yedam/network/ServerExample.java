@@ -27,7 +27,7 @@ public class ServerExample extends Application {
 	List<Client> list = new Vector<>(); // ArrayList
 
 	void startServer() {
-		executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+		executorService = Executors.newFixedThreadPool(14);
 		try {
 			serverSocket = new ServerSocket();
 			serverSocket.bind(new InetSocketAddress("192.168.0.69", 5001));

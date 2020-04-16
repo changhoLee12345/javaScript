@@ -1,3 +1,0 @@
-Ajax testing.....
-/request.txt
-/ajax/getEmpList.html

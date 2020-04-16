@@ -30,7 +30,7 @@ public class ClientExample extends Application {
 			public void run() {
 				socket = new Socket();
 				try {
-					socket.connect(new InetSocketAddress("192.168.0.69", 5001));
+					socket.connect(new InetSocketAddress("192.168.0.16", 5001));
 					Platform.runLater(() -> {
 						displayText("[연결 완료: " + socket.getRemoteSocketAddress() + "]");
 						btnConn.setText("stop");

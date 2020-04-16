@@ -64,6 +64,7 @@ public class Exam01 {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		list.stream().filter(s -> s.getSalary() >= 1000).forEachOrdered(s -> System.out.println(s.getFirstName()));
+		list.stream().filter(s -> s.getSalary() >= 1000).sorted()
+				.forEach(s -> System.out.println(s.getFirstName()));
 	}
 }

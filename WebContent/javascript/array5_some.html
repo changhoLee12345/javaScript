@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Member(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        var members = [];
+        members.push(new Member('Hong', 21));
+        members.push(new Member('Hwang', 22));
+        members.push(new Member('Park', 23));
+        members.push(new Member('Choi', 24));
+
+        var result = members.every(function (a, b, c) {
+            return a.age > 21;
+        });
+
+        result = members.some(function (a, b, c) {
+            return a.age > 21;
+        });
+        
+        result = members.indexOf(new Member('Hong', 21));
+        console.log(result);
+    </script>
+</body>
+
+</html>

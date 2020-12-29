@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        let persons = [];
+        persons.push(new Person('Hong', 20));
+        persons.push(new Person('Hwang', 21));
+        persons.push(new Person('Choi', 22));
+        persons.push(new Person('Park', 23));
+
+        let newPersons = persons.filter(function (a, b, c) {
+            return a.age >= 21;
+        }).map(function (a, b, c) {
+            let member = {};
+            member.name = a.name;
+            member.grade = a.age % 2 == 0 ? 'even' : 'odd';
+            return member;
+        });
+
+        newPersons = persons.map(function (a, b, c) {
+            let member = {};
+            member.name = a.name;
+            member.grade = a.age % 2 == 0 ? 'even' : 'odd';
+            return member;
+        }).filter(function (a, b, c) {
+            return a.grade == 'even';
+        });
+
+        console.log(newPersons);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regexp.html</title>
+</head>
+
+<body>
+    <script>
+        var str = "Visit W3Schools!";
+        var n = str.search(/W3Schools/i);
+        console.log(n);
+
+        var str = "Visit Microsoft or microsoft!";
+        var res = str.replace(/microsoft/ig, "W3Schools");
+        console.log(res);
+    </script>
+</body>
+
+</html>

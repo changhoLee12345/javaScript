@@ -9,23 +9,10 @@
 
 <body>
     <!-- <script src="../js/object1.js"></script> -->
+    <div id="show"></div>
     <script>
-        function Person(first, last, age, eyecolor) {
-            this.firstName = first;
-            this.lastName = last;
-            this.age = age;
-            this.eyeColor = eyecolor;
-        }
+        function makeMulti() {
 
-        Person.prototype.name = function () {
-            return this.firstName + " " + this.lastName;
-        }
-
-        let father = new Person('john', 'Doe', 20, 'blue');
-        let mother = new Person('maggie', 'Doe', 21, 'green');
-
-        for (field in father) {
-            console.log(field, ' , ', father.name());
         }
     </script>
 </body>

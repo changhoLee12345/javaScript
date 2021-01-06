@@ -60,3 +60,11 @@ obj.add = 5;
 obj.reset;
 obj.subtract = 4;
 console.log(obj.name);
+
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+}

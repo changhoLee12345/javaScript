@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        p:nth-child(2) {
+            color: yellow;
+            background-color: aqua;
+        }
+
+        div:nth-child(3) {
+            background-color: yellow;
+            color: brown;
+        }
+
+        div:nth-of-type(3) {
+            color: yellow;
+            background-color: blueviolet;
+        }
+
+        div:empty {
+            color: red;
+        }
+
+        p[text^='a1'] {
+            color: yellow;
+            background-color: gray;
+        }
+
+        .a1 {
+            color: green;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Pseudo Class</h2>
+    <p><a href="https://www.w3.org" target="_blank" target="_blank">W3C 방문</a>
+        마우스 이벤트에 따른 링크의 변화</p>
+
+    <div class="d1">div-1</div>
+
+    <div class="d2">div-2</div>
+
+    <div class="d3">div-3</div>
+
+    <h3>Hello<div></div>
+    </h3>
+    <div></div>
+
+    <p text="aa bb cc">리스트 매칭</p>
+    <p text="a1-a2-a3 b1-b2">범위매칭</p>
+
+    <p class="a1 a2 a3">클래스 매칭</p>
+
+</body>
+
+</html>

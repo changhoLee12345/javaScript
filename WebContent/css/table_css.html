@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            font-size: 16px;
+            border: 1px dotted red;
+        }
+
+        th {
+            font-size: x-large;
+        }
+
+        tr {
+            text-align: center;
+            border: 1px dotted green;
+        }
+
+        th {
+            border-style: double;
+            border-color: red;
+            border-collapse: collapse;
+            background-color: pink;
+        }
+
+        td {
+            border: 1px solid blue;
+        }
+
+        tr:nth-of-type(2n) {
+            background-color: burlywood;
+        }
+
+        tr:nth-of-type(2n) p {
+            color: burlywood;
+        }
+
+        tr:nth-last-of-type(2n+1) {
+            color: brown;
+        }
+
+        tr:nth-last-of-type(2n+1) p {
+            color: white;
+        }
+
+        input:checked+p {
+            color: red;
+        }
+
+        td[type='name'] {
+            font-size: larger;
+            color: darkblue;
+        }
+
+        td[type='addr']:hover {
+            color: red;
+        }
+
+        td>input:checked+td {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id='tbl'>
+        <tr>
+            <th><input type='checkbox'></th>
+            <th>이름</th>
+            <th>주소</th>
+            <th>연락처</th>
+            <th>취미</th>
+        </tr>
+        <tr id='num1'>
+            <td><input type='checkbox'>
+                <p>num1</p>
+            </td>
+            <td type="name">강경필</td>
+            <td type="addr">대구시 북구</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>야구</td>
+        </tr>
+        <tr id='num2'>
+            <td><input type='checkbox'>
+                <p>num2</p>
+            </td>
+            <td type="name">경윤수</td>
+            <td type="addr">대구시 북서구 123 아파트</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>뜨게질</td>
+        </tr>
+        <tr id='num3'>
+            <td><input type='checkbox'>
+                <p>num3</p>
+            </td>
+            <td type="name">김다희</td>
+            <td type="addr">부산시 북구 대동아파트</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>배구</td>
+        </tr>
+        <tr id='num4'>
+            <td><input type='checkbox'>
+                <p>num4</p>
+            </td>
+            <td type="name">김민주</td>
+            <td type="addr">서울시 평양구 합천동 456</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>인스타</td>
+        </tr>
+        <tr id='num5'>
+            <td><input type='checkbox'>
+                <p>num5</p>
+            </td>
+            <td type="name">김영호</td>
+            <td type="addr">로스앤젤레스 LA동 83번지</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>페이스북</td>
+        </tr>
+        <tr id='num6'>
+            <td><input type='checkbox'>
+                <p>num6</p>
+            </td>
+            <td type="name">김한설</td>
+            <td type="addr">멕시코시티 동구 880번호</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>코딩</td>
+        </tr>
+        <tr id='num7'>
+            <td><input type='checkbox'>
+                <p>num7</p>
+            </td>
+            <td type="name">김현경</td>
+            <td type="addr">강원도 태백산동 45번지</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>헬스</td>
+        </tr>
+        <tr id='num8'>
+            <td><input type='checkbox'>
+                <p>num8</p>
+            </td>
+            <td type="name">도왕락</td>
+            <td type="addr">김포시 김포공항동 123번지</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>버스운전</td>
+        </tr>
+        <tr id='num9'>
+            <td><input type='checkbox'>
+                <p>num9</p>
+            </td>
+            <td type="name">박소연</td>
+            <td type="addr">인천시 동구 매여동 323번지</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>경비행기 운전</td>
+        </tr>
+        <tr id='num10'>
+            <td><input type='checkbox'>
+                <p>num10</p>
+            </td>
+            <td type="name">박재현</td>
+            <td type="addr">대전시 동구 유천동 431번지</td>
+            <td>010-1111-2345</td>
+            <td type='hobby'>우주비행</td>
+        </tr>
+    </table>
+
+    <script>
+        let names = document.querySelectorAll('td[type="hobby"]');
+        let allNames = "'";
+        for (let i = 0; i < names.length; i++) {
+            allNames += names[i].innerHTML + "','";
+        }
+        console.log(allNames);
+
+        let users = ['강경필', '경윤수', '김다희', '김민주', '김영호', '김한설', '김현경', '도왕락', '박소연', '박재현'];
+        let addrs = ['대구시 북구', '대구시 북서구 123 아파트', '부산시 북구 대동아파트', '서울시 평양구 합천동 456', '로스앤젤레스 LA동 83번지',
+            '멕시코시티 동구 880번호', '강원도 태백산동 45번지', '김포시 김포공항동 123번지', '인천시 동구 매여동 323번지', '대전시 동구 유천동 431번지'
+        ];
+        let hobbies = ['야구', '뜨게질', '배구', '인스타', '페이스북', '코딩', '헬스', '버스운전', '경비행기 운전', '우주비행'];
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <company>
+        <department id="dept" location="https://www.daum.net"> Sales</department>
+    </company>
+    <button onclick='user_click()'>click</button>
+    <script>
+        let dept = document.getElementById("dept");
+        let loc = dept.getAttribute('location');
+        console.log(loc);
+
+        function user_click() {
+            location.href = loc;
+        }
+    </script>
+</body>
+
+</html>

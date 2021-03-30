@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id='bdy'>
+
+    <script>
+        // 기초값 생성.
+        let users = ['강경필', '경윤수', '김다희', '김민주', '김영호', '김한설', '김현경', '도왕락', '박소연', '박재현'];
+        let addrs = ['대구시 북구 신천동 321번지', '대구시 북서구 123 아파트23호', '부산시 북구 대동아파트 34호', '서울시 평양구 합천동 456', '로스앤젤레스 LA동 83번지',
+            '멕시코시티 동구 880번호', '강원도 태백산동 45번지', '김포시 김포공항동 123번지', '인천시 동구 매여동 323번지', '대전시 동구 유천동 431번지'
+        ];
+        let hobbies = ['야구', '뜨게질', '배구', '인스타', '페이스북', '코딩', '헬스', '버스운전', '경비행기 운전', '우주비행'];
+        let phones = [];
+        for (let i = 0; i < 10; i++) {
+            let first = Math.round(Math.random() * 9000) + 1000;
+            let last = Math.round(Math.random() * 9000) + 1000;
+            phones[i] = '010-' + first + '-' + last;
+        }
+        // 필드값
+        let fields = ['이름', '주소', '연락처', '취미'];
+
+        let tags = '<table id="tbl">';
+        for (let i = 0; i < 10; i++) {
+            tags += '<tr id="num' + (i + 1) + '"><td><input type="checkbox"><p>num' + (i + 1) +
+                '</p></td><td type="name">' + users[i] + '</td><td type="addr">' + addrs[i] +
+                '</td><td type="phone">' + phones[i] + '</td><td type="hobby">' + hobbies[i] + '</td></tr>';
+        }
+        tags += "</table>";
+        console.log(tags);
+    </script>
+</body>
+
+</html>

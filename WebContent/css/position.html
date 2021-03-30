@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 10px;
+            background-color: pink;
+            width: 200px;
+        }
+
+        p {
+            background-color: yellow;
+            width: 100px;
+            height: 50px;
+            color: blue;
+        }
+
+        p:nth-child(3) {
+            color: red;
+            float: left;
+            left: 80%;
+            top: 80%;
+            position: fixed;
+            background-color: aqua;
+        }
+
+        p:nth-of-type(4) {
+            color: yellow;
+            background-color: green;
+            position: relative;
+            /* left: 50px;
+            top: 30px;
+            float: left; */
+        }
+
+        p:nth-child(6) {
+            position: relative;
+            float: left;
+            left: 110px;
+            /* top: -16px; */
+        }
+
+        p:nth-child(7) {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>text1</p>
+        <p>text2</p>
+        <p>text3</p>
+        <p>text4</p>
+        <p>text5</p>
+        <p>text6</p>
+        <p>text7</p>
+        <p>text8</p>
+        <p>text9</p>
+        <p>text10</p>
+    </div>
+</body>
+
+</html>

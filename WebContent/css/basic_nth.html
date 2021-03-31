@@ -13,46 +13,127 @@
 
         body {
             margin: 0px;
+            background-color: cornflowerblue;
+            color: blue;
+            font-size: 16px;
         }
 
-        div {
+        div.container {
+            background-color: chartreuse;
+            width: 800px;
+            position: absolute;
+            left: 100px;
+            top: 50px;
+        }
+
+        div.item {
             width: 500px;
             padding: 10px;
             height: 150px;
             border: 10px solid rgb(179, 107, 164);
         }
 
-        div:nth-of-type(2n) {
+        div.item:nth-of-type(2n) {
             background-color: yellow;
         }
 
-        div:nth-of-type(2n+1) {
+        div.item:nth-of-type(2n+1) {
             background-color: blueviolet;
         }
 
         div#div3 {
             position: sticky;
-            left: 50px;
             top: 50px;
+            left: 150px;
+        }
+
+        /* body {
+            background-color: cornflowerblue;
+            color: white;
+            font-size: 16px;
+        } */
+
+        div.inner_container {
+            background-color: darkcyan;
+            float: right;
+            padding: 10px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        div.btn {
+            text-align: center;
+        }
+
+        div.inner_content,
+        div.inner_title {
+            display: inline;
+            width: 200px;
+        }
+
+        label {
+            margin-bottom: 60px;
         }
     </style>
 </head>
 
 <body style="background-color: green;">
-
-    <div id="div1">1</div>
-    <div id="div2">2</div>
-    <div id="div3">3</div>
-    <div id="div4">4</div>
-    <div id="div5">5</div>
-    <div id="div6">6</div>
-    <div id="div7">7</div>
-    <div id="div8">8</div>
-    <div id="div9">9</div>
-    <div id="div10">10</div>
+    <div class='container'>
+        <div class='item' id="div1">1
+            <div class='inner_container'>
+                <div class='inner_item'>
+                    <label>제목:</label>
+                    <div class='inner_title'>
+                        <input style='width: 200px;' type="text">
+                    </div>
+                </div>
+                <div class='inner_item'>
+                    <label>내용:</label>
+                    <div class='inner_content'>
+                        <textarea style='width: 200px;' width='200px'></textarea>
+                    </div>
+                </div>
+                <div class='btn'>
+                    <button>수정</button>
+                    <button>취소</button>
+                </div>
+            </div>
+        </div>
+        <div class='item' id="div2">2
+            <div class='inner_container'>
+                <div class='inner_item'>
+                    <label>제목:</label>
+                    <div class='inner_title'>
+                        <input style='width: 200px;' type="text">
+                    </div>
+                </div>
+                <div class='inner_item'>
+                    <label>내용:</label>
+                    <div class='inner_content'>
+                        <textarea style='width: 200px;' width='200px'></textarea>
+                    </div>
+                </div>
+                <div class='btn'>
+                    <button>수정</button>
+                    <button>취소</button>
+                </div>
+            </div>
+        </div>
+        <div class='item' id="div3">3</div>
+        <div class='item' id="div4">4</div>
+        <div class='item' id="div5">5</div>
+        <div class='item' id="div6">6</div>
+        <div class='item' id="div7">7</div>
+        <div class='item' id="div8">8</div>
+        <div class='item' id="div9">9</div>
+        <div class='item' id="div10">10</div>
+    </div>
     <script>
         console.log(window.innerHeight, window.outerHeight);
         console.log(window.innerWidth, window.outerWidth);
+
+        let formTag = '<form action="form.jsp" method="get">';
+        formTag += '';
     </script>
 </body>
 

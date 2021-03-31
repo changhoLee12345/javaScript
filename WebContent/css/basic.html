@@ -5,34 +5,104 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 외부 스타일 -->
-    <link rel="stylesheet" href="basic.css">
-
-    <!-- 내부 스타일 -->
+    <title>css/basic.html</title>
     <style>
-        p1 {
-            color: aqua;
-            background-color: burlywood;
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        div {
+            float: left;
+            width: 10vw;
+            padding: 10px;
+            border: 20px solid aqua;
+        }
+
+        #div1 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(10, 110, 0);
+        }
+
+        #div2 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(30, 110, 0);
+        }
+
+        #div3 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(50, 110, 0);
+        }
+
+        #div4 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(70, 110, 0);
+        }
+
+        #div5 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(90, 110, 0);
+            position: relative;
+            top: 120px;
+            left: 100px;
+        }
+
+        #div6 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(110, 110, 0);
+        }
+
+        #div7 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(130, 110, 0);
+        }
+
+        #div8 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(150, 110, 0);
+        }
+
+        #div9 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(170, 110, 0);
+        }
+
+        #div10 {
+            /* height: 837px; */
+            height: 100px;
+            background-color: rgb(190, 110, 0);
         }
     </style>
-    <title>css/basic.html</title>
 </head>
 
-<body>
+<body style="background-color: green;">
 
-    <p1>
-        내부스타일:: hello
-    </p1>
-    <p2>
-        외부스타일:: nice
-    </p2>
-
-    <!-- 인라인 -->
-    <p3 style="color: red; background-color: aqua;">
-        인라인스타일:: good
-    </p3>
-
-
+    <div id="div1">1</div>
+    <div id="div2">2</div>
+    <div id="div3">3</div>
+    <div id="div4">4</div>
+    <div id="div5">5</div>
+    <div id="div6">6</div>
+    <div id="div7">7</div>
+    <div id="div8">8</div>
+    <div id="div9">9</div>
+    <div id="div10">10</div>
+    <script>
+        console.log(window.innerHeight, window.outerHeight);
+        console.log(window.innerWidth, window.outerWidth);
+    </script>
 </body>
 
 </html>

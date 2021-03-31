@@ -11,8 +11,17 @@
             font-size: 12px;
         }
 
+        div {
+            margin-left: 20%;
+        }
+
         table {
-            width: 800px;
+            width: 60%;
+        }
+
+        th,
+        td {
+            border-collapse: collapse;
         }
 
         td {
@@ -37,170 +46,172 @@
 
 <body>
 
-    <div style="padding-left: 40%; padding-bottom: 10px; font-size: 25px; height:40px;">입사지원서</div>
-    <table>
-        <tr>
-            <td class='field' width="20%">지원분야</td>
-            <td width="30%"></td>
-            <td class='field' width="24%">희망연봉</td>
-            <td width="26%" style='text-align: right;'>만원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-        </tr>
-        <tr height="10px"></tr>
-        <tr>
-            <td class='field'>이름</td>
-            <td></td>
-            <td class='field'>생년월일</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td class='field'>핸드폰</td>
-            <td></td>
-            <td class='field'>이메일</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>주소</td>
-            <td colspan='3'></td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <td class='title' colspan="4">학력사항</td>
-        </tr>
-        <tr style='border-width: 1px;'>
-            <td class='field' width="25%">기간</td>
-            <td class='field' width="30%">학력사항</td>
-            <td class='field'>전공</td>
-            <td class='field'>학점</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <td class='title'>주요이력</td>
-        </tr>
-        <tr>
-            <td class='field' width="25%">기간</td>
-            <td class='field' width="20%">구분</td>
-            <td class='field'>기관및업무내용</td>
-        </tr>
-        <tr>
-            <td rowspan='2'></td>
-            <td>경력사항</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td width="120px"></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td rowspan='2' width="120px"></td>
-            <td>경력사항</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td width="120px"></td>
-            <td></td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <td class='title'>참여프로젝트</td>
-        </tr>
-        <tr>
-            <td class='field' style='width: 35%;'>프로젝트기간</td>
-            <td class='field'>프로젝트명</td>
-        </tr>
-        <tr>
-            <td rowspan='2'></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-        <tr>
-            <td rowspan='2'></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-    </table>
-    <table>
-        <tr>
-            <td class='title'>해외연수및해외경험</td>
-        </tr>
-        <tr>
-            <td class='field' width='25%'>기간</td>
-            <td class='field' width='25%'>국가명</td>
-            <td class='field' width='25%'>연수기관(학교)및단체</td>
-            <td class='field' width='25%'>목적</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-    <table>
-        <tr style='height: 30px;'>
-            <td class='title' colspan='2' width='49.5%'>OA능력</td>
-            <td style='border-width: 0;'></td>
-            <td class='title' colspan='2' width='49.5%'>어학능력</td>
-        </tr>
-        <tr>
-            <td class='field'>문서작성(한글/MS-Word)</td>
-            <td class='field'>스프레드시트(Excel)</td>
-            <td style='border-width: 0;'></td>
-            <td class='field'>언어</td>
-            <td class='field'>회화능력</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td style='border-width: 0;'></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td class='field'>프리젠테이션(PowerPoint)</td>
-            <td class='field'>인터넷(정보검색/Outlook)</td>
-            <td style='border-width: 0;'></td>
-            <td class='field'>작문능력</td>
-            <td class='field'>독해능력</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td style='border-width: 0;'></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+    <div style="font-size: 25px; height:40px; margin-left: 40%;">입사지원서</div>
+    <div>
+        <table>
+            <tr>
+                <td class='field' width="20%">지원분야</td>
+                <td width="30%"></td>
+                <td class='field' width="24%">희망연봉</td>
+                <td width="26%" style='text-align: right;'>만원&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            </tr>
+            <tr height="10px"></tr>
+            <tr>
+                <td class='field'>이름</td>
+                <td></td>
+                <td class='field'>생년월일</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class='field'>핸드폰</td>
+                <td></td>
+                <td class='field'>이메일</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td colspan='3'></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class='title' colspan="4">학력사항</td>
+            </tr>
+            <tr style='border-width: 1px;'>
+                <td class='field' width="25%">기간</td>
+                <td class='field' width="30%">학력사항</td>
+                <td class='field'>전공</td>
+                <td class='field'>학점</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class='title'>주요이력</td>
+            </tr>
+            <tr>
+                <td class='field' width="25%">기간</td>
+                <td class='field' width="20%">구분</td>
+                <td class='field'>기관및업무내용</td>
+            </tr>
+            <tr>
+                <td rowspan='2'></td>
+                <td>경력사항</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td width="120px"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan='2' width="120px"></td>
+                <td>경력사항</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td width="120px"></td>
+                <td></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class='title'>참여프로젝트</td>
+            </tr>
+            <tr>
+                <td class='field' style='width: 35%;'>프로젝트기간</td>
+                <td class='field'>프로젝트명</td>
+            </tr>
+            <tr>
+                <td rowspan='2'></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan='2'></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td class='title'>해외연수및해외경험</td>
+            </tr>
+            <tr>
+                <td class='field' width='25%'>기간</td>
+                <td class='field' width='25%'>국가명</td>
+                <td class='field' width='25%'>연수기관(학교)및단체</td>
+                <td class='field' width='25%'>목적</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <table>
+            <tr style='height: 30px;'>
+                <td class='title' colspan='2' width='49.5%'>OA능력</td>
+                <td style='border-width: 0;'></td>
+                <td class='title' colspan='2' width='49.5%'>어학능력</td>
+            </tr>
+            <tr>
+                <td class='field'>문서작성(한글/MS-Word)</td>
+                <td class='field'>스프레드시트(Excel)</td>
+                <td style='border-width: 0;'></td>
+                <td class='field'>언어</td>
+                <td class='field'>회화능력</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style='border-width: 0;'></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class='field'>프리젠테이션(PowerPoint)</td>
+                <td class='field'>인터넷(정보검색/Outlook)</td>
+                <td style='border-width: 0;'></td>
+                <td class='field'>작문능력</td>
+                <td class='field'>독해능력</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td style='border-width: 0;'></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
 </body>
 
 </html>

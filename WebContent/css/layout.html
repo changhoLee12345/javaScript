@@ -7,37 +7,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #grad1 {
-            height: 70px;
-            background-color: red;
-            background: linear-gradient(270deg, red, yellow);
+        * {
+            box-sizing: border-box;
         }
 
-        #grad2 {
-            height: 70px;
-            background-color: red;
-            background: linear-gradient(red, yellow, green);
+        .mainHeader {
+            background-color: aquamarine;
+            float: left;
+            width: 100%;
+            height: 10vh;
+            text-align: center;
         }
 
-        #grad3 {
-            height: 70px;
-            background-color: red;
-            background: linear-gradient(red, orange, yellow, green, blue, indigo, violet);
+        header>ul>li {
+            display: inline;
+            margin-right: 10px;
         }
 
-        #grad4 {
-            height: 70px;
-            background-color: red;
-            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+        nav {
+            background-color: cadetblue;
+            float: left;
+            width: 25%;
+            height: 75vh;
+        }
+
+        nav>div {
+            height: 30vh;
+            background-color: darkgreen;
+            position: relative;
+            top: 30vh;
+        }
+
+        nav>div>img {
+            position: relative;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+
+
+        section {
+            float: left;
+            width: 50%;
+            height: 80vh;
+        }
+
+        section>header {
+            border: 1px solid green;
+            height: 15vh;
+            padding: 10px;
+            overflow: auto;
+        }
+
+        section>article {
+            padding: 10px;
+            border: 1px solid blue;
+            height: 30vh;
+        }
+
+        section>footer {
+            border: 1px solid red;
+            height: 15vh;
+            padding: 10px;
+        }
+
+        aside {
+            float: right;
+            width: 25%;
+            height: auto;
+            background-color: cornflowerblue;
+            padding: 15px;
+        }
+
+        .mainFooter {
+            float: left;
+            width: 100%;
+            font-size: 20px;
+            text-align: center;
+            background-color: cadetblue;
         }
     </style>
 </head>
 
 <body>
-    <div id="grad1"></div><br>
-    <div id="grad2"></div><br>
-    <div id="grad3"></div><br>
-    <div id="grad4"></div>
+    <!-- 레이아웃 실습. -->
+    <header class='mainHeader'>
+        <ul>
+            <li><a href='#'>subject1</a></li>
+            <li><a href='#'>subject2</a></li>
+            <li><a href='#'>subject3</a></li>
+            <li><a href='#'>subject4</a></li>
+        </ul>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="">menu1</a></li>
+            <li><a href="">menu2</a></li>
+            <li><a href="">menu3</a></li>
+            <li><a href="">menu4</a></li>
+        </ul>
+        <div>
+            <img src="../images/images1.jpg" width="120px" alt="">
+        </div>
+    </nav>
+    <section>
+        <header>
+            <b>header:</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate inventore, eius
+            laudantium
+            laboriosam deleniti id reprehenderit soluta iste dolorem officia quo adipisci ut culpa, minima, corporis
+            iusto fugiat accusantium illo.
+        </header>
+        <article>
+            <b>article:</b> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus excepturi consequuntur
+            mollitia
+            quidem.
+            Unde deleniti a dolorem cumque voluptates animi eius possimus, fugit molestias esse nobis odio pariatur
+            eveniet laborum.
+        </article>
+        <footer>
+            <b>footer:</b> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta eaque rem facilis? Beatae,
+            magni
+            quae
+            cumque, ducimus consequuntur expedita recusandae adipisci molestias neque perferendis dolorem ipsa.
+            Molestias dolor error voluptatibus!
+        </footer>
+    </section>
+    <aside>
+        <b>aside:</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis corporis, a esse ut
+        repudiandae debitis
+        nesciunt ad placeat, facilis sit nulla! Eos quisquam iusto, nobis voluptates odit optio quae perferendis?
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt obcaecati animi voluptatibus, vitae labore
+        eligendi in quo? Id pariatur deserunt assumenda libero dignissimos accusantium voluptatem debitis eaque velit!
+        Iusto, accusantium?
+    </aside>
+    <footer class='mainFooter'>
+        &copy;Yedam.ac
+    </footer>
 </body>
 
 </html>

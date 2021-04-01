@@ -24,14 +24,21 @@
             text-align: center;
         }
 
+        button {
+            margin-top: 15px;
+            background-color: rgb(168, 231, 164);
+        }
+
         div.inner_content,
         div.inner_title {
             display: inline;
             width: 200px;
         }
 
-        label {
-            margin-bottom: 60px;
+        .label {
+            display: inline-block;
+            position: relative;
+            top: -20px;
         }
     </style>
 </head>
@@ -45,7 +52,9 @@
             </div>
         </div>
         <div class='inner_item'>
-            <label>내용:</label>
+            <div class='label'>
+                <label>내용:</label>
+            </div>
             <div class='inner_content'>
                 <textarea style='width: 200px;' width='200px'></textarea>
             </div>

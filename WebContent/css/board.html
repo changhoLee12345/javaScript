@@ -44,26 +44,36 @@
 </head>
 
 <body>
-    <div class='inner_container'>
-        <div class='inner_item'>
-            <label>제목:</label>
-            <div class='inner_title'>
-                <input style='width: 200px;' type="text">
+    <form action="get.jsp" method="GET">
+
+        <div class='inner_container'>
+            <div class='inner_item'>
+                <label>제목:</label>
+                <div class='inner_title'>
+                    <input style='width: 200px;' type="text">
+                </div>
+            </div>
+            <div class='inner_item'>
+                <div class='label'>
+                    <label>내용:</label>
+                </div>
+                <div class='inner_content'>
+                    <textarea style='width: 200px;'></textarea>
+                </div>
+            </div>
+            <div class='btn'>
+                <button onclick='return call_func()'>수정</button>
+                <button>취소</button>
             </div>
         </div>
-        <div class='inner_item'>
-            <div class='label'>
-                <label>내용:</label>
-            </div>
-            <div class='inner_content'>
-                <textarea style='width: 200px;' width='200px'></textarea>
-            </div>
-        </div>
-        <div class='btn'>
-            <button>수정</button>
-            <button>취소</button>
-        </div>
-    </div>
+
+    </form>
+    <script>
+        function call_func() {
+            location.href = 'attr.html';
+            return false;
+        }
+    </script>
 </body>
 
 </html>

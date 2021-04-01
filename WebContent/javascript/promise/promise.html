@@ -12,15 +12,17 @@
             document.getElementById("demo").innerHTML = some;
         }
 
-        let myPromise = new Promise(function (myResolve, myReject) {
-            let x = 0;
-            // some code (try to change x to 5)
+        let myPromise = new Promise((myResolve, myReject) => {
+            setTimeout(() => {
+                let x = 0 + 1;
+                // some code (try to change x to 5)
 
-            if (x == 0) {
-                myResolve("OK");
-            } else {
-                myReject("Error");
-            }
+                if (x == 0) {
+                    myResolve("OK");
+                } else {
+                    myReject("Error");
+                }
+            }, 3000)
         });
 
         myPromise.then(

@@ -29,7 +29,8 @@ var brickOffsetLeft = 20;
 var bricks = [];
 var score = 0;
 var lives = 3;
-var r = g = b = 0;
+var r = g = b = 150;
+changeColor();
 
 for (var c = 0; c < brickColumnCount; c++) {
     bricks[c] = [];
@@ -94,6 +95,7 @@ function collisionDetection() {
             var b = bricks[c][r];
             if (b.status == 1) {
                 if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+                    changeColor();
                     dy = -dy;
                     b.status = 0;
                     score++;
@@ -138,13 +140,12 @@ function drawPaddle() {
 }
 
 function changeColor() {
-    r = Math.floor(Math.random() * 255 + 1);
-    g = Math.floor(Math.random() * 255 + 1);
-    b = Math.floor(Math.random() * 255 + 1);
+    r = Math.floor(Math.random() * 255);
+    g = Math.floor(Math.random() * 255);
+    b = Math.floor(Math.random() * 255);
 }
 
 function draw() {
-
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
     drawBall(r, g, b);

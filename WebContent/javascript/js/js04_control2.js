@@ -87,4 +87,4 @@ function drawCalendar(year, month) {
     }
 
 }
-drawCalendar(2021, 3);
+// drawCalendar(2021, 3);

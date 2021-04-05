@@ -11,9 +11,19 @@
     <!-- <script src="../js/object1.js"></script> -->
     <div id="show"></div>
     <script>
-        function makeMulti() {
-
+        var ref = {
+            name: 'hong',
+            age: 20
         }
+        console.log(ref);
+        ref.age = 30;
+        console.log(ref);
+        ref = {
+            name: 'hong',
+            age: 22
+        }
+        console.log(ref);
+        ref.age = 33;
     </script>
 </body>
 

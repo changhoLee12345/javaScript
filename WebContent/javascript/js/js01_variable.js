@@ -53,3 +53,9 @@ console.log('name1: ', name, ',age: ', age);
 }
 const PI = 3.141592;
 console.log(PI);
+
+function myFunction() {
+    console.log('func')
+}
+console.log(typeof myFunction)
+

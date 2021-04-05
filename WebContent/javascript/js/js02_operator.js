@@ -32,4 +32,3 @@ window.onload = function () {
 function getElementById(element) {
     return document.getElementById(element);
 }
-

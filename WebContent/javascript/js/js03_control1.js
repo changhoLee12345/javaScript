@@ -17,7 +17,6 @@ function getResult(time) {
 
 }
 
-
 let today = new Date();
 let day;
 today = today.getDay();

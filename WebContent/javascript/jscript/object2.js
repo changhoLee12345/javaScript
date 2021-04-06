@@ -14,7 +14,6 @@ person.lang = 'en';
 person.language = 'kr';
 console.log(person.lang);
 
-
 let obj = {
     counter: 0
 }

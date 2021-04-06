@@ -1,7 +1,8 @@
 // js01_variable.js
 // number, string, boolean, array, object, undefined, null
+// 변수의 선언, 데이터의 타입. 변수의 종류....
 
-var num1 = 10;
+var num11 = 10;
 var str1 = 'hello';
 var bool1 = true;
 var obj = null;
@@ -58,4 +59,3 @@ function myFunction() {
     console.log('func')
 }
 console.log(typeof myFunction)
-

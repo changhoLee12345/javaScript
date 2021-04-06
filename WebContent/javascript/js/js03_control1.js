@@ -14,7 +14,6 @@ function getResult(time) {
     } else {
         return 'Good Night!!';
     }
-
 }
 
 let today = new Date();

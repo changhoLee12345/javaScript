@@ -27,3 +27,20 @@ car.stop();
 let carFullName = car.fullName();
 
 console.log(carFullName);
+
+let person = {
+    name: 'Hong',
+    age: 20,
+    city: 'Hanyang'
+}
+
+let perAry = Object.values(person);
+console.log(perAry);
+
+perAry.forEach((val, idx, c) => {
+    console.log(val, idx);
+});
+
+let json = JSON.stringify(person);
+let obj = JSON.parse(json);
+console.log(obj);

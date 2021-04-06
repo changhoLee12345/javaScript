@@ -1,27 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
 
 <body>
-    <button onclick='testPromise()'>start</button>
-    <div id="show"></div>
-    <script src="../js/promise.js"></script>
-    <!-- <script>
-        let promise = new Promise((resolve, reject) => {
+
+    <h2>JavaScript Promise</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        function myDisplayer(some) {
+            document.getElementById("demo").innerHTML = some;
+        }
+
+        let myPromise = new Promise((myResolve, myReject) => {
             setTimeout(() => {
-                resolve('ok');
-            }, 2000);
+                let x = 0 + 1;
+                // some code (try to change x to 5)
+
+                if (x == 0) {
+                    myResolve("OK");
+                } else {
+                    myReject("Error");
+                }
+            }, 3000)
         });
 
-        promise.then(function (message) {
-            console.log(message)
-        });
-    </script> -->
+        myPromise.then(
+            function (value) {
+                myDisplayer(value);
+            },
+            function (error) {
+                myDisplayer(error);
+            }
+        );
+    </script>
+
 </body>
 
 </html>

@@ -1,4 +1,5 @@
 // js04_control2.js
+// 반복문을 활용한 달력그리기.
 
 // for, while, do while
 let names = ['Hong', 'Hwang', 'Park', 'Choi'];
@@ -11,6 +12,22 @@ for (let i = 0; i < names.length; i++) {
         document.write('</ul>');
     }
 }
+
+let colors = ['red', 'green', 'blue'];
+let lastCnt = 10;
+let cnt = 0;
+let tag = '<ul>';
+
+do {
+    let line = cnt % 3;
+    tag += '<li style="background-color: ' + colors[line] + ';">' + colors[line] + '</li>';
+    if (lastCnt == cnt++) {
+        break;
+    }
+} while (true);
+
+tag += '</ul>';
+document.write(tag);
 
 // 달력...그리기
 function drawCalendar() {

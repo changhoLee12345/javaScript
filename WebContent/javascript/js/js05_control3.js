@@ -1,25 +1,31 @@
 // js05_control3.js
-
-let colors = ['red', 'green', 'blue'];
-let lastCnt = 10;
-let cnt = 0;
-let tag = '<ul>';
-
-do {
-    let line = cnt % 3;
-    tag += '<li style="background-color: ' + colors[line] + ';">' + colors[line] + '</li>';
-    if (lastCnt == cnt++) {
-        break;
-    }
-} while (true);
-
-tag += '</ul>';
-document.write(tag);
+// 이벤트에 대한 간략한 설명.
 
 // 버튼클릭, 마우스오버 이벤트 설명.
-document.write('<button id="btn">Click</button>');
+
+let addClick = function () {
+    let i = 0;
+
+    function addCnt() {
+        i++;
+        return i;
+    }
+    return addCnt;
+}
+
+let firstClick = addClick();
+
+let colors = ['red', 'green', 'blue'];
+let iCnt = 0;
+
+document.write('<button class="btn" id="btn">Click</button><p />');
+document.write('<div id="rect"></div>');
 let btn = document.getElementById('btn');
-btn.onclick = clickFunc;
+let rect = document.getElementById('rect');
+
+btn.onclick = function () {
+    rect.setAttribute('style', 'background-color: ' + colors[iCnt++ % 3] + '');
+}
 btn.onmouseover = function () {
     this.style.backgroundColor = 'yellow';
     this.style.color = 'red';
@@ -27,8 +33,4 @@ btn.onmouseover = function () {
 btn.onmouseout = function () {
     this.style.backgroundColor = '';
     this.style.color = '';
-}
-
-function clickFunc() {
-    console.log('hhh')
 }

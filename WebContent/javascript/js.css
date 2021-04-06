@@ -7,3 +7,16 @@ th {
     background-color: brown;
     color: white;
 }
+
+div {
+    float: left;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: yellow;
+}
+
+.btn {
+    position: static;
+    display: block;
+}

@@ -1,4 +1,5 @@
 // operator.js
+// 연산자 종류, 처리.
 let num1 = num2 = 120;
 
 let result = num1 + num2;

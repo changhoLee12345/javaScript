@@ -1,5 +1,6 @@
 // js03_control1.js 
 // if, if else, for, while, do while
+// 조건문, 반복문 예제.
 
 let curHour = new Date().getHours();
 console.log(getResult(curHour));

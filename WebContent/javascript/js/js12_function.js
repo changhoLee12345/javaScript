@@ -9,7 +9,7 @@ console.log(result);
 
 // 또다른 function을 호출할 수 있따.
 function customFunc(year, month) {
-    drawCalendar(year, month);
+    // drawCalendar(year, month);
 }
 customFunc(2020, 3);
 

@@ -43,11 +43,15 @@ class Student {
         return this.sno + ' - ' + this.name;
         j
     }
+    showName() {
+        return this.name;
+    }
 }
 
 let student = new Student('001', 'Hong');
 student.setName = 'Hwnag';
 console.log(student.getName);
+console.log(student.showName());
 // console.log(student.showInfo);
 
 

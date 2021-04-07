@@ -11,7 +11,7 @@ let i = 0;
 
 function remainTime() {
 
-    let lunchTime = new Date();
+    let lunchTime = new Date(); // 기준시간을 설정하면 된다.
     lunchTime.setHours(17);
     lunchTime.setMinutes(50);
     lunchTime.setSeconds(0);
@@ -49,7 +49,7 @@ function remainTime() {
     let s2t = document.getElementById('s2');
     s2t.innerHTML = lpad(calSec).substring(1, 2);
 
-    if (calHours == 0 && calMin < 3) {
+    if (lunchTime.getTime() - now.getTime() < blickTime(15)) { // 깜빡거리는 시간을 몇분이하로 지정할지 ...
         show.style.fontSize = (60 - calSec) + 'px';
         if (colorChange) {
             show.style.backgroundColor = colors[i++ % 4];
@@ -68,6 +68,10 @@ function lpad(time) {
         return '0' + time;
     }
     return '' + time;
+}
+
+function blickTime(mm) {
+    return mm * 60 * 1000;
 }
 
 // remainTime();

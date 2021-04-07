@@ -8,6 +8,7 @@ console.log(Math.floor(3.3));
 let colorChange = true;
 let colors = ['aqua', 'green', 'lightblue', 'red'];
 let i = 0;
+setStyle();
 
 function remainTime() {
 
@@ -52,11 +53,6 @@ function remainTime() {
 
     if (lunchTime.getTime() - now.getTime() < blickTime(2)) { // 깜빡거리는 시간을 몇분이하로 지정할지 ...
         show.style.fontSize = (60 - calSec) + 'px';
-        // if (colorChange) {
-        //     show.style.backgroundColor = colors[i % 4];
-        // } else {
-        //     show.style.backgroundColor = colors[i % 4];
-        // }
         show.style.backgroundColor = colors[i % 4];
         for (let j = 0; j < cls.length; j++) {
             cls[j].style.backgroundColor = colors[i % 4];
@@ -78,6 +74,15 @@ function lpad(time) {
 
 function blickTime(mm) {
     return mm * 60 * 1000;
+}
+
+function setStyle() {
+    let hTag = document.getElementsByTagName('head');
+    let scpt = document.createElement('link');
+    scpt.setAttribute('rel', 'stylesheet');
+    scpt.setAttribute('href', 'script/date.css');
+    hTag[0].appendChild(scpt);
+
 }
 
 // remainTime();

@@ -6,14 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js/js01_variable.js</title>
-    <link rel="stylesheet" href="js.css">
-    <script src="script/date_math_string.js"></script>
+    <!-- <link rel="stylesheet" href="js.css"> -->
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            background-color: aqua;
+            width: 80vw;
+            height: 30vh;
+            border: 1px solid red;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20vh;
+        }
+
+        div[id],
+        div[class='blank'] {
+            background-color: yellow;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 1000;
+            width: 80px;
+            height: 100px;
+            line-height: 100px;
+        }
+
+        div.blank {
+            background-color: aqua;
+        }
+    </style>
 </head>
 
 <body>
-    <script>
 
-    </script>
+    <div class="flex-container">
+        <div id='h1'>1</div>
+        <div id='h2'>2</div>
+        <div class='blank'>:</div>
+        <div id='m1'>2</div>
+        <div id='m2'>2</div>
+        <div class='blank'>:</div>
+        <div id='s1'>2</div>
+        <div id='s2'>2</div>
+    </div>
+    <script src="script/date_math_string.js"></script>
+
 </body>
 
 </html>

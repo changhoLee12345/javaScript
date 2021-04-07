@@ -33,6 +33,7 @@ function remainTime() {
 
     // console.log(lpad(calHours) + ':' + lpad(calMin) + ':' + lpad(calSec));
     let show = document.getElementsByClassName('flex-container')[0];
+    let cls = document.getElementsByClassName('blank');
     // show.innerHTML = (lpad(calHours) + ':' + lpad(calMin) + ':' + lpad(calSec));
     let h1t = document.getElementById('h1');
     h1t.innerHTML = lpad(calHours).substring(0, 1);
@@ -49,18 +50,23 @@ function remainTime() {
     let s2t = document.getElementById('s2');
     s2t.innerHTML = lpad(calSec).substring(1, 2);
 
-    if (lunchTime.getTime() - now.getTime() < blickTime(15)) { // 깜빡거리는 시간을 몇분이하로 지정할지 ...
+    if (lunchTime.getTime() - now.getTime() < blickTime(2)) { // 깜빡거리는 시간을 몇분이하로 지정할지 ...
         show.style.fontSize = (60 - calSec) + 'px';
-        if (colorChange) {
-            show.style.backgroundColor = colors[i++ % 4];
-        } else {
-            show.style.backgroundColor = colors[i++ % 4];
+        // if (colorChange) {
+        //     show.style.backgroundColor = colors[i % 4];
+        // } else {
+        //     show.style.backgroundColor = colors[i % 4];
+        // }
+        show.style.backgroundColor = colors[i % 4];
+        for (let j = 0; j < cls.length; j++) {
+            cls[j].style.backgroundColor = colors[i % 4];
         }
         colorChange = !colorChange;
     } else {
         show.style.fontSize = (60 - calSec) + 'px';
         show.style.backgroundColor = 'aqua';
     }
+    i++;
 }
 
 function lpad(time) {
@@ -77,4 +83,4 @@ function blickTime(mm) {
 // remainTime();
 setInterval(function () {
     remainTime();
-}, 500);
+}, 333);

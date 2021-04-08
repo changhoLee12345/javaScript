@@ -70,23 +70,57 @@
         }
 
 
+        let firstVal = 0,
+            lastVal = 0,
+            oper = null;
+
         function clickFunc() {
-            let touch = display.innerHTML;
-            let firstVal, lastVal, result;
+            let touchVal = this.innerHTML;
 
-            if (isNaN(this.innerHTML)) {
-                firstVal = parseInt(touch);
-
-                touch += firstVal + this.innerHTML;
-
+            if (isNaN(touchVal)) {
+                if (touchVal == 'C') {
+                    clearFunc();
+                } else if (touchVal != '=') {
+                    oper = touchVal;
+                } else {
+                    let v = cal(firstVal, lastVal, oper);
+                    display.innerHTML = v;
+                    return;
+                }
             } else {
-                firstVal += touch;
-
+                if (oper) {
+                    lastVal += this.innerHTML;
+                } else {
+                    firstVal += this.innerHTML;
+                }
             }
 
-            display.innerHTML = result;
+            display.innerHTML = parseInt(firstVal) + oper + (lastVal == 0 ? '' : parseInt(lastVal));
+        }
 
+        function cal(fv, lv, o) {
+            let f = parseInt(fv);
+            let l = parseInt(lv);
+            let result = 0;
+            if (o == '+') {
+                result = f + l;
+            } else if (o == '-') {
+                result = f - l;
+            } else if (o == '/') {
+                result = f / l;
+            } else if (o == '*') {
+                result = f * l;
+            } else if (o == '%') {
+                result = f % l;
+            }
+            return result;
+        }
 
+        function clearFunc() {
+            // display.innerHTML = 0;
+            firstVal = 0;
+            lastVal = 0;
+            oper = null;
         }
     </script>
 </body>

@@ -3,101 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>js/js01_variable.js</title>
-    <!-- <script src="jScript/function2.js"></script> -->
+    <title>Document</title>
 </head>
 
 <body>
-    <table id="tbl" border="1"></table>
 
-    <script>
-        let json =
-            '[{"id":1,"first_name":"Chiarra","last_name":"Leif","email":"cleif0@ca.gov","gender":"Polygender","ip_address":"128.41.232.15"},{"id":2,"first_name":"Goldina","last_name":"Grundle","email":"ggrundle1@4shared.com","gender":"Male","ip_address":"9.141.137.107"},{"id":3,"first_name":"Mellisa","last_name":"Pervew","email":"mpervew2@hhs.gov","gender":"Male","ip_address":"97.107.75.3"},{"id":4,"first_name":"Sydney","last_name":"Flores","email":"sflores3@scribd.com","gender":"Genderfluid","ip_address":"177.78.160.177"},{"id":5,"first_name":"Kurtis","last_name":"Adelsberg","email":"kadelsberg4@squidoo.com","gender":"Male","ip_address":"83.204.119.214"},{"id":6,"first_name":"Zackariah","last_name":"Dwelley","email":"zdwelley5@geocities.jp","gender":"Genderqueer","ip_address":"22.0.97.81"},{"id":7,"first_name":"Dian","last_name":"Ritzman","email":"dritzman6@zdnet.com","gender":"Genderfluid","ip_address":"221.2.180.72"},{"id":8,"first_name":"Granny","last_name":"Clausner","email":"gclausner7@tinypic.com","gender":"Non-binary","ip_address":"29.115.13.200"},{"id":9,"first_name":"Ceciley","last_name":"Dutnall","email":"cdutnall8@tuttocitta.it","gender":"Male","ip_address":"80.0.144.179"},{"id":10,"first_name":"Carolan","last_name":"Gidman","email":"cgidman9@arstechnica.com","gender":"Non-binary","ip_address":"58.72.209.183"},{"id":11,"first_name":"Clarice","last_name":"Helleker","email":"chellekera@yelp.com","gender":"Polygender","ip_address":"215.6.142.5"},{"id":12,"first_name":"Cele","last_name":"Calliss","email":"ccallissb@yale.edu","gender":"Female","ip_address":"37.115.212.221"},{"id":13,"first_name":"Werner","last_name":"Stag","email":"wstagc@skype.com","gender":"Bigender","ip_address":"140.182.134.112"},{"id":14,"first_name":"Isadore","last_name":"Hollingby","email":"ihollingbyd@samsung.com","gender":"Agender","ip_address":"241.3.142.69"},{"id":15,"first_name":"Vita","last_name":"McCard","email":"vmccarde@sohu.com","gender":"Female","ip_address":"235.234.9.230"}]';
-
-        let data = JSON.parse(json);
-
-        let title = {
-            checkbox: false,
-            id: '아이디',
-            first_name: '이름',
-            last_name: '성(씨)',
-            email: '이메일',
-            gender: '남여',
-            button: false
-        }
-
-        createTable();
-
-        function createTable() {
-            let tbl = document.getElementById('tbl');
-            createTitle(title);
-            data.forEach(function (val, idx, ary) {
-                tbl.append(createTr(val));
-            });
-        };
-
-        // 타이틀 생성.
-        function createTitle(obj) {
-            let tbl = document.getElementById('tbl');
-            let tr = document.createElement('tr');
-            let td, text;
-
-            for (field in title) {
-                let f = (title[field] == false ? field : title[field]);
-                td = document.createElement('td');
-                text = document.createTextNode(f);
-                td.append(text);
-                tr.append(td);
-            }
-            tbl.append(tr);
-        }
-
-        // tr 생성.
-        function createTr(obj) {
-            let tr = document.createElement('tr');
-            let td, text;
-            appendCheckboxTo(tr);
-            for (field in title) {
-                if (title[field] == false)
-                    continue;
-                td = document.createElement('td');
-                text = document.createTextNode(obj[field]);
-                td.append(text);
-                tr.append(td);
-            }
-            appendButtonTo(tr);
-            return tr;
-        }
-
-        // button 삽입.
-        function prependButtonTo(tr) {
-            let td = document.createElement('td');
-            let button = document.createElement('button');
-            button.innerHTML = 'OK';
-            td.append(button);
-            tr.prepend(td);
-        }
-
-        // button 추가.
-        function appendButtonTo(tr) {
-            let td = document.createElement('td');
-            let button = document.createElement('button');
-            button.innerHTML = 'OK';
-            td.append(button);
-            tr.append(td);
-        }
-
-        // checkbox 추가.
-        function appendCheckboxTo(tr) {
-            let td = document.createElement('td');
-            let input = document.createElement('input');
-            input.setAttribute('type', 'checkbox');
-            td.append(input);
-            tr.append(td);
-        }
-    </script>
 </body>
 
 </html>

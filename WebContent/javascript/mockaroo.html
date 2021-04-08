@@ -43,15 +43,35 @@
             let tbl = document.getElementById('tbl');
             let tr = document.createElement('tr');
             let td, text;
-
+            // checkbox
+            td = document.createElement('th');
+            let chk = document.createElement('input');
+            chk.setAttribute('type', 'checkbox');
+            chk.onchange = allCheckFunc;
+            td.append(chk);
+            tr.append(td);
             for (field in title) {
                 let f = (title[field] == false ? field : title[field]);
-                td = document.createElement('td');
+                if (title[field] == false)
+                    continue;
+                f = title[field];
+                td = document.createElement('th');
                 text = document.createTextNode(f);
                 td.append(text);
                 tr.append(td);
             }
+            td = document.createElement('th');
+            text = document.createTextNode('기능');
+            td.append(text);
+            tr.append(td);
             tbl.append(tr);
+        }
+
+        function allCheckFunc() {
+            let inputs = document.getElementsByTagName('input');
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].checked = this.checked;
+            }
         }
 
         // tr 생성.
@@ -94,8 +114,23 @@
             let td = document.createElement('td');
             let input = document.createElement('input');
             input.setAttribute('type', 'checkbox');
+            input.onchange = checkFunc;
             td.append(input);
             tr.append(td);
+        }
+
+        function checkFunc() {
+
+            let tchk = document.querySelector('th>input');
+            tchk.checked = true;
+            let inputs = document.getElementsByTagName('input');
+            for (let i = 0; i < inputs.length; i++) {
+                if (!inputs[i].checked) {
+                    tchk.checked = false;
+                    return;
+                }
+            }
+
         }
     </script>
 </body>

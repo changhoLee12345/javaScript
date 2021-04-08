@@ -32,7 +32,7 @@
         }
 
         div#display {
-            width: 200px;
+            width: 190px;
             padding-right: 10px;
             text-align: right;
         }
@@ -66,17 +66,18 @@
 
         let btns = document.querySelectorAll('div.container>div');
         for (let i = 0; i < btns.length; i++) {
-            btns[i].onclick = clickFunc;
+            btns[i].onclick = clickEvent;
         }
 
-
+        // 변수선언 및 초기화.
         let firstVal = 0,
             lastVal = 0,
             oper = null;
 
-        function clickFunc() {
+        function clickEvent() {
             let touchVal = this.innerHTML;
 
+            // 입력값이 연산자인지 숫자인지 구분한다.
             if (isNaN(touchVal)) {
                 if (touchVal == 'C') {
                     clearFunc();
@@ -84,7 +85,11 @@
                     oper = touchVal;
                 } else {
                     let v = cal(firstVal, lastVal, oper);
+                    v = ecal(firstVal + oper + lastVal);
                     display.innerHTML = v;
+                    firstVal = v;
+                    lastVal = 0;
+                    oper = null;
                     return;
                 }
             } else {
@@ -116,8 +121,12 @@
             return result;
         }
 
+        function ecal(exp) {
+            return eval(exp)
+        }
+
+        // Clear 버튼 누르면 변수 초기화 해주기.
         function clearFunc() {
-            // display.innerHTML = 0;
             firstVal = 0;
             lastVal = 0;
             oper = null;

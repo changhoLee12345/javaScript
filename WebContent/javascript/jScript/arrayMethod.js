@@ -66,7 +66,6 @@ newPersons = persons.map(function (a, b, c) {
 
 console.log(newPersons);
 
-
 var numbers1 = [45, 4, 9, 16, 25];
 var result = numbers1.reduce(function (a, b, c, d) {
     console.log(a, b, c, d);
@@ -74,4 +73,3 @@ var result = numbers1.reduce(function (a, b, c, d) {
 });
 
 console.log('result: ' + result);
-

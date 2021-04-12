@@ -9,7 +9,6 @@ class UserStorage {
             }
         }, 2000);
     }
-
     getRoles(user, onSuccess, onError) {
         setTimeout(() => {
             if (user === 'ellie') {
@@ -24,19 +23,22 @@ class UserStorage {
     }
 
 }
-
 const userStorage = new UserStorage();
 const id = prompt('enter your id');
 const password = prompt('enter your password');
-
-userStorage.loginUser(id,
+userStorage.loginUser(
+    id,
     password,
     (user) => {
-        userStorage.getRoles(user, (userRole) => {
-            alert(`Hello ${userRole.name}, you have a ${userRole.role}`);
-        }, (error) => {
-            console.log(error);
-        })
-    }, (error) => {
+        userStorage.getRoles(
+            user,
+            (userRole) => {
+                alert(`Hello ${userRole.name}, you have a ${userRole.role}`);
+            },
+            (error) => {
+                console.log(error);
+            })
+    },
+    (error) => {
         console.log(error)
     });

@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="script/promise.js"></script> -->
+</head>
 
 <body>
-
-    <h2>JavaScript Promise</h2>
-
-    <p id="demo"></p>
-
     <script>
         function myDisplayer(some) {
             document.getElementById("demo").innerHTML = some;
         }
 
         let myPromise = new Promise((myResolve, myReject) => {
+            let x = Math.round(Math.random() * 10) % 2;
             setTimeout(() => {
-                let x = 0 + 1;
                 // some code (try to change x to 5)
-
                 if (x == 0) {
                     myResolve("OK");
                 } else {
-                    myReject("Error");
+                    myReject(new Error("no network!"));
                 }
-            }, 3000)
+            }, 1000)
         });
 
         myPromise.then(
             function (value) {
-                myDisplayer(value);
+                // myDisplayer(value);
+                console.log(value);
             },
             function (error) {
-                myDisplayer(error);
+                // myDisplayer(error);
+                console.error(error);
             }
         );
     </script>
-
 </body>
 
 </html>

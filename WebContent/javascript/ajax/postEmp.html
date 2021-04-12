@@ -8,19 +8,23 @@
 
 <body>
 	<script>
-		var data = { firstname: "Scott", lastname: "Tiger", age: 30 }
+		var data = {
+			firstname: "Scott",
+			lastname: "Tiger",
+			age: 30
+		}
 		var xhtp = new XMLHttpRequest();
-		// xhtp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		xhtp.onreadystatechange = function () {
-			// if (xhtp.readyState == 4 && xhtp.status == 200) {
-				console.log(Object.keys(data).map(key => `${key}=${data[key]}`).join("&"), ("status"+xhtp.readyState));
-			// }
+			if (xhtp.readyState == 4 && xhtp.status == 200) {
+				console.log(Object.keys(data).map(key => `${key}=${data[key]}`).join("&"), ("status" + xhtp.readyState));
+			}
 		}
 		xhtp.open("post", "../InsertEmpServlet", true);
+		// xhtp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		xhtp.setRequestHeader('Content-type', 'application/json');
-		// xhtp.send(JSON.stringify({"firstname":"Scott","lastname":"Tiger"}));
+		xhtp.send(JSON.stringify({"firstname":"Scott","lastname":"Tiger"}));
 		// xhtp.send("firstname=John&lastname=Smith");
-		xhtp.send(Object.keys(data).map(key => `${key}=${data[key]}`).join("&"))
+		// xhtp.send(Object.keys(data).map(key => `${key}=${data[key]}`).join("&"))
 	</script>
 </body>
 
